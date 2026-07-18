@@ -46,28 +46,24 @@ User-uploaded documents feed into the same pipeline: extracted → chunked → e
 | UI | `gradio` (multimodal chat interface) |
 
 ## Project structure
-
-```
 Loan-Advisory-RAG-Agent/
 │
 ├── README.md
 ├── requirements.txt
-├── Loan_Advisory_RAG.ipynb          # end-to-end pipeline — run top to bottom
-├── sample_documents/
-│     ├── real_indian_banks_full_corpus.zip     # HDFC, ICICI, PNB, SBI, Axis — 15 docs each
-│     ├── rbi_regulatory_reference_docs.zip     # RBI regulatory reference docs
-│     ├── SBI_Home_Loan.pdf                     # quick-preview extracts (subset, for browsing
-│     ├── HDFC_Personal_Loan.pdf                # without unzipping the full corpus)
-│     ├── ICICI_Loan_FAQ.pdf
-│     └── RBI_Penal_Charges_Guidelines.pdf
-├── screenshots/
-│     ├── architecture.png           # pipeline diagram
-│     ├── chatbot.png                # placeholder — see note below
-│     └── retrieval.png              # placeholder — see note below
-├── vector_store/                    # (optional) generated FAISS/BM25 artifacts — not committed
 ├── LICENSE
-└── .gitignore
-```
+├── .gitignore
+├── Loan Advisory RAG Pipeline.ipynb        # end-to-end pipeline — run top to bottom
+│
+├── real_indian_banks_full_corpus.zip       # HDFC, ICICI, PNB, SBI, Axis policy PDFs
+├── rbi_regulatory_reference_docs.zip       # RBI regulatory reference docs
+│
+├── chatbot.png                             # Gradio chat UI in action
+├── Retrieval.png                           # hybrid retrieval output
+├── Retrival answeing a query.png           # end-to-end query → answer example
+│
+└── vector_store/
+      └── .gitkeep                           # keeps the folder tracked; FAISS/BM25
+                                             # artifacts generated here are gitignored
 
 > **Screenshot note:** `chatbot.png` and `retrieval.png` are placeholders generated for this scaffold — they were not captured from a live run. Run the notebook's Gradio cell, take real screenshots of the chat UI and a retrieval/citation result, and replace these two files before presenting the project.
 
