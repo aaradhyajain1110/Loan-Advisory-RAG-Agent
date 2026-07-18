@@ -1,0 +1,10 @@
+pdfplumber
+rank-bm25
+sentence-transformers
+faiss-cpu
+transformers
+accelerate
+torch
+gradio
+python-docx
+numpy
