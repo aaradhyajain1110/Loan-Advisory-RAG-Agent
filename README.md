@@ -22,7 +22,37 @@ Loan policy documents are long, inconsistent across banks, and easy to misread. 
 
 ## Architecture
 
-![Architecture](screenshots/architecture.png)
+```
+PDFs (per bank + RBI)
+        │
+        ▼
+   Chunking (numbered sections / Q&A / generic headings)
+        │
+        ▼
+ ┌──────────────┬──────────────┐
+ │  FAISS index │  BM25 index  │
+ │  (dense)     │  (sparse)    │
+ └──────┬───────┴──────┬───────┘
+        │              │
+        └──── RRF fusion ────┘
+                │
+                ▼
+        Cross-encoder re-rank
+                │
+                ▼
+     Metadata / confidence guardrails
+                │
+                ▼
+        Local LLM (Qwen2.5-1.5B)
+                │
+                ▼
+        Cited, grounded answer
+                │
+                ▼
+          Gradio chat UI
+```
+ 
+---
 
 ```
 User Query → Filter Extraction (bank/product) → Dense Retrieval (FAISS) + BM25 Retrieval
