@@ -46,6 +46,7 @@ User-uploaded documents feed into the same pipeline: extracted → chunked → e
 | UI | `gradio` (multimodal chat interface) |
 
 ## Project structure
+```
 Loan-Advisory-RAG-Agent/
 │
 ├── README.md
@@ -64,6 +65,8 @@ Loan-Advisory-RAG-Agent/
 └── vector_store/
       └── .gitkeep                          # keeps the folder tracked; FAISS/BM25
                                              # artifacts generated here are gitignored
+```
+ 
 
 > **Screenshot note:** `chatbot.png` and `retrieval.png` are placeholders generated for this scaffold — they were not captured from a live run. Run the notebook's Gradio cell, take real screenshots of the chat UI and a retrieval/citation result, and replace these two files before presenting the project.
 
